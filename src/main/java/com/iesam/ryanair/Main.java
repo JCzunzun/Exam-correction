@@ -18,9 +18,9 @@ public class Main {
         Empleado empleado2= new Empleado("700002","empleado2","empleadoApellido2","piloto");
         Empleado empleado3= new Empleado("700003","empleado3","empleadoApellido3","azafata");
         EmpledoPresentation empledoPresentation= new EmpledoPresentation();
-        empledoPresentation.saveEmpleado(empleado1);
-        empledoPresentation.saveEmpleado(empleado2);
-        empledoPresentation.saveEmpleado(empleado3);
+        empledoPresentation.saveEmpleadoMem(empleado1);
+        empledoPresentation.saveEmpleadoMem(empleado2);
+        empledoPresentation.saveEmpleadoFile(empleado3);
         //creacion pasajeros
         Pasajero pasajero= new Pasajero("800001","Pasajero1","ApellidoPasajero1","Avila","Avila");
         Pasajero pasajero1= new Pasajero("800002","Pasajero2","ApellidoPasajero2","Avila","Avila");

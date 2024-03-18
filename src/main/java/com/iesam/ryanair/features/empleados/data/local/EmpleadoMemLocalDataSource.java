@@ -4,7 +4,7 @@ import com.iesam.ryanair.features.empleados.domain.Empleado;
 
 import java.util.ArrayList;
 
-public class EmpleadoMemLocalDataSource {
+public class EmpleadoMemLocalDataSource implements EmpleadoLocalDataRepository{
 
     ArrayList<Empleado> empleados= new ArrayList<>();
     //singleton
@@ -15,7 +15,7 @@ public class EmpleadoMemLocalDataSource {
         }
         return instance;
     }
-    public void saveEmpleados(Empleado empleado){
+    public void saveEmpleado(Empleado empleado){
         empleados.add(empleado);
 
     }

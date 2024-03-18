@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class EmpleadoLocalDataSource {
+public class EmpleadoFileLocalDataSource implements EmpleadoLocalDataRepository{
     private String nameFile = "Empleado.txt";
 
     private Gson gson = new Gson();
@@ -23,7 +23,7 @@ public class EmpleadoLocalDataSource {
     private final Type typeList = new TypeToken<ArrayList<Demo>>() {
     }.getType();
 
-    public void save(Empleado empleado) {
+    public void saveEmpleado(Empleado empleado) {
         List<Empleado> empleados = findAll();
         empleados.add(empleado);
         saveToFile(empleados);
@@ -66,7 +66,7 @@ public class EmpleadoLocalDataSource {
         }
         return new ArrayList<>();
     }
-    public Empleado obtain(String id) {
+    public Empleado obtainEmpleado(String id) {
         List<Empleado> empleados = findAll();
         for (Empleado empleado : empleados) {
             if (Objects.equals(empleado.getDni(), id)) {

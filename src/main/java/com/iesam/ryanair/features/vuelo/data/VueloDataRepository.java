@@ -12,16 +12,16 @@ public class VueloDataRepository implements VueloRepository {
     }
     @Override
     public void saveVuelo(Vuelo vuelo) {
-
+        vueloLocalDataSource.save(vuelo);
     }
 
     @Override
     public Vuelo obtainVuelo(String cod) {
-        return null;
+        return vueloLocalDataSource.obtain(cod);
     }
 
     @Override
     public boolean verifyAvion(Avion avion) {
-        return false;
+        return vueloLocalDataSource.verify(avion);
     }
 }

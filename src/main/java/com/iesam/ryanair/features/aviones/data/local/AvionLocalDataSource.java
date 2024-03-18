@@ -3,8 +3,6 @@ package com.iesam.ryanair.features.aviones.data.local;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.iesam.ryanair.features.aviones.domain.Avion;
-import com.iesam.ryanair.features.demo.domain.Demo;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -20,7 +18,7 @@ public class AvionLocalDataSource {
 
     private Gson gson = new Gson();
 
-    private final Type typeList = new TypeToken<ArrayList<Demo>>() {
+    private final Type typeList = new TypeToken<ArrayList<Avion>>() {
     }.getType();
 
     public void save(Avion avion) {
