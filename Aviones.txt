@@ -1,1 +1,0 @@
-[{"codAvion":"100001","nombre":"Pajarito","modelo":"Boing701","asientos":"200"},{"codAvion":"100002","nombre":"Nube","modelo":"Boing705","asientos":"250"},{"codAvion":"100003","nombre":"Rayo","modelo":"Boing710","asientos":"100"}]
