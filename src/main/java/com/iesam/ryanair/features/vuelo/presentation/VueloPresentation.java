@@ -17,8 +17,8 @@ public class VueloPresentation {
         Vuelo vuelo= getVueloUseCase.obtainVuelo(cod);
         System.out.println(vuelo.toString());
     }
-    public boolean verify(Avion avion){
+    public boolean verify(Avion avion, String id){
         VerifyAvionForVueloUseCase verifyAvionForVueloUseCase= new VerifyAvionForVueloUseCase(new VueloDataRepository());
-        return verifyAvionForVueloUseCase.verify(avion);
+        return verifyAvionForVueloUseCase.verify(avion,id);
     }
 }

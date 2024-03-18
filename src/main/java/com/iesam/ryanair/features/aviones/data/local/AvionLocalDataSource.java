@@ -16,6 +16,10 @@ import java.util.Scanner;
 public class AvionLocalDataSource {
     private String nameFile = "Aviones.txt";
 
+    public String getNameFile() {
+        return nameFile;
+    }
+
     private Gson gson = new Gson();
 
     private final Type typeList = new TypeToken<ArrayList<Avion>>() {

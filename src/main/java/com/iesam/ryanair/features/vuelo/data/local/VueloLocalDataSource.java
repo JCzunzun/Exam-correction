@@ -2,6 +2,7 @@ package com.iesam.ryanair.features.vuelo.data.local;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.iesam.ryanair.features.aviones.data.local.AvionLocalDataSource;
 import com.iesam.ryanair.features.aviones.domain.Avion;
 import com.iesam.ryanair.features.vuelo.domain.Vuelo;
 
@@ -16,6 +17,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class VueloLocalDataSource {
+    private AvionLocalDataSource avionLocalDataSource=new AvionLocalDataSource();
     private String nameFile = "Vuelo.txt";
 
     private Gson gson = new Gson();
@@ -71,13 +73,38 @@ public class VueloLocalDataSource {
         }
         return null;
     }
-    public boolean verify(Avion avion){
-        List<Vuelo> vuelos = findAll();
-        for (Vuelo vuelo : vuelos) {
-            if (Objects.equals(vuelo.getAvion(), avion)) {
-                return true;
+    public boolean verify(Avion avionUsed){
+        List <Avion> aviones= findAvion();
+        List<Vuelo> vuelos= findAll();
+        for(Vuelo vuelo:vuelos){
+            for(Avion avion:aviones){
+                if(Objects.equals(vuelo.getAvion(),avionUsed)){
+                    return true;
+                }
             }
         }
         return false;
+    }
+    public List<Avion> findAvion() {
+        try {
+            File myObj = new File(avionLocalDataSource.getNameFile());
+            if (!myObj.exists()) {
+                myObj.createNewFile();
+            }
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                myReader.close();
+                return gson.fromJson(data, typeList);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Ha ocurrido un error al obtener el listado.");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Ha ocurrido un error al crear el fichero.");
+            throw new RuntimeException(e);
+        }
+        return new ArrayList<>();
     }
 }

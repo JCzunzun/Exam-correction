@@ -7,21 +7,18 @@ import com.iesam.ryanair.features.empleados.domain.Empleado;
 import com.iesam.ryanair.features.empleados.domain.EmpleadoRepository;
 
 public class EmpleadoDataRepository implements EmpleadoRepository {
-    private EmpleadoLocalDataRepository instance;
-    public void instanceFile(){
-        instance=new EmpleadoFileLocalDataSource();
+    EmpleadoLocalDataRepository empleadoLocalDataRepository;
+    public EmpleadoDataRepository(EmpleadoLocalDataRepository empleadoLocalDataRepository) {
+        this.empleadoLocalDataRepository=empleadoLocalDataRepository;
     }
-    public void instanceMem(){
-        instance= new EmpleadoMemLocalDataSource().newInstance();
-    }
-    private EmpleadoMemLocalDataSource instancia= new EmpleadoMemLocalDataSource().newInstance();
+
     @Override
     public void saveEmpleado(Empleado empleado) {
-        instancia.saveEmpleado(empleado);
+        empleadoLocalDataRepository.saveEmpleado(empleado);
     }
 
     @Override
     public Empleado obtainEmpleado(String dni) {
-        return instancia.obtainEmpleado(dni);
+        return empleadoLocalDataRepository.obtainEmpleado(dni);
     }
 }

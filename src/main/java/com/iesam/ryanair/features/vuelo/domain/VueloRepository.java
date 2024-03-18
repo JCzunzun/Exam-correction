@@ -5,5 +5,5 @@ import com.iesam.ryanair.features.aviones.domain.Avion;
 public interface VueloRepository {
     void saveVuelo(Vuelo vuelo);
     Vuelo obtainVuelo(String cod);
-    boolean verifyAvion(Avion avion);
+    boolean verifyAvion(Avion avion,String id);
 }

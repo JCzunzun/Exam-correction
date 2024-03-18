@@ -29,6 +29,7 @@ public class Vuelo {
         this.destino = destino;
     }
 
+
     public String getCodVuelo() {
         return codVuelo;
     }
