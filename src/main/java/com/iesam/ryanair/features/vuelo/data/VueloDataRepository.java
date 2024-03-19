@@ -21,7 +21,7 @@ public class VueloDataRepository implements VueloRepository {
     }
 
     @Override
-    public boolean verifyAvion(Avion avion, String id) {
+    public boolean verifyAvion(Avion avion) {
         return vueloLocalDataSource.verify(avion);
     }
 }

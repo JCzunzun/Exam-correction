@@ -8,7 +8,7 @@ public class VerifyAvionForVueloUseCase {
     public VerifyAvionForVueloUseCase(VueloRepository vueloRepository) {
         this.vueloRepository = vueloRepository;
     }
-    public boolean verify(Avion avion,String id){
-        return vueloRepository.verifyAvion(avion,id);
+    public boolean verify(Avion avion){
+        return vueloRepository.verifyAvion(avion);
     }
 }
