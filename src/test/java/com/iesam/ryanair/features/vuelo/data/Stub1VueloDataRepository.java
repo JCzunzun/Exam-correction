@@ -4,6 +4,8 @@ import com.iesam.ryanair.features.aviones.domain.Avion;
 import com.iesam.ryanair.features.vuelo.domain.Vuelo;
 import com.iesam.ryanair.features.vuelo.domain.VueloRepository;
 
+import java.util.Objects;
+
 public class Stub1VueloDataRepository implements VueloRepository {
     @Override
     public void saveVuelo(Vuelo vuelo) {
@@ -20,6 +22,6 @@ public class Stub1VueloDataRepository implements VueloRepository {
         Avion avionVuelo= new Avion("100001", "Pajarito", "Boing701", "200");
         Vuelo vuelo= new Vuelo("1",avionVuelo,null,null,null,null,null,null,null);
 
-        return vuelo.getAvion().equals(avion);
+        return avionVuelo.equals(avion);
     }
 }
