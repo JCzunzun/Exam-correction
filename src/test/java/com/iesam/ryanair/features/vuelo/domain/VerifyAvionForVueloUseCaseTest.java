@@ -1,0 +1,37 @@
+package com.iesam.ryanair.features.vuelo.domain;
+
+import com.iesam.ryanair.features.aviones.domain.Avion;
+import com.iesam.ryanair.features.vuelo.data.Stub1VueloDataRepository;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class VerifyAvionForVueloUseCaseTest {
+    private VerifyAvionForVueloUseCase verifyAvionForVueloUseCase;
+
+    @BeforeEach
+    void setup() {
+    }
+    @AfterEach
+    void tearDown(){
+        verifyAvionForVueloUseCase=null;
+    }
+    @Test
+    public void cuandoUnAvionSeEncuentraEnUnVueloDevuelveFalse(){
+        //Given
+        verifyAvionForVueloUseCase= new VerifyAvionForVueloUseCase(
+                new Stub1VueloDataRepository()
+        );
+        Avion avion= new Avion("100001", "Pajarito", "Boing701", "200");
+
+        //When
+        boolean veririfar= verifyAvionForVueloUseCase.verify(avion);
+
+        //Then
+        Assertions.assertFalse(veririfar);
+
+    }
+}
