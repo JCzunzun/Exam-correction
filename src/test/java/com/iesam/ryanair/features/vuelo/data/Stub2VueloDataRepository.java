@@ -4,7 +4,7 @@ import com.iesam.ryanair.features.aviones.domain.Avion;
 import com.iesam.ryanair.features.vuelo.domain.Vuelo;
 import com.iesam.ryanair.features.vuelo.domain.VueloRepository;
 
-public class Stub1VueloDataRepository implements VueloRepository {
+public class Stub2VueloDataRepository implements VueloRepository {
     @Override
     public void saveVuelo(Vuelo vuelo) {
 
