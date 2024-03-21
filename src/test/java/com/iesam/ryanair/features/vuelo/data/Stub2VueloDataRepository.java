@@ -19,7 +19,6 @@ public class Stub2VueloDataRepository implements VueloRepository {
     public boolean verifyAvion(Avion avion) {
         Avion avionVuelo= new Avion("100001", "Pajarito", "Boing701", "200");
         Vuelo vuelo= new Vuelo("1",avionVuelo,null,null,null,null,null,null,null);
-
-        return vuelo.getAvion().equals(avion);
+        return vuelo.getAvion().getCodAvion().equals(avion.getCodAvion());
     }
 }

@@ -28,10 +28,10 @@ class VerifyAvionForVueloUseCaseTest {
         Avion avion= new Avion("100001", "Pajarito", "Boing701", "200");
 
         //When
-        boolean veririfar= verifyAvionForVueloUseCase.verify(avion);
+        boolean veriricar= verifyAvionForVueloUseCase.verify(avion);
 
         //Then
-        Assertions.assertTrue(veririfar);
+        Assertions.assertTrue(veriricar);
 
     }
     @Test
@@ -43,10 +43,10 @@ class VerifyAvionForVueloUseCaseTest {
         Avion avion= new Avion("100002", "Nube", "Boing705", "250");
 
         //When
-        boolean veririfar= verifyAvionForVueloUseCase.verify(avion);
+        boolean veriricar= verifyAvionForVueloUseCase.verify(avion);
 
         //Then
-        Assertions.assertFalse(veririfar);
+        Assertions.assertFalse(veriricar);
 
     }
 }

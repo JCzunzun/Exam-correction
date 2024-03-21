@@ -78,7 +78,7 @@ public class VueloLocalDataSource {
         List<Vuelo> vuelos= findAll();
         for(Vuelo vuelo:vuelos){
             for(Avion avion:aviones){
-                if(Objects.equals(vuelo.getAvion(),avionUsed)){
+                if(Objects.equals(vuelo.getAvion().getCodAvion(),avionUsed.getCodAvion())){
                     return true;
                 }
             }
